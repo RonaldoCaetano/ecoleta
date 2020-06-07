@@ -20,7 +20,7 @@ export default class PointsController {
 		const serializedPoints = points.map((point) => {
 			return {
 				...point,
-				image_url: `http://192.168.2.104/uploads/${point.image}`,
+				image_url: `http://${req.connection.remoteAddress}/uploads/${point.image}`,
 			}
 		})
 
@@ -69,6 +69,7 @@ export default class PointsController {
 	}
 
 	async show(req: Request, res: Response) {
+
 		const {
 			params: { id },
 		} = req
@@ -77,7 +78,7 @@ export default class PointsController {
 
 		const serializedPoint = {
 			...point,
-			image_url: `http://192.168.2.104/uploads/${point.image}`,
+			image_url: `http://${req.connection.remoteAddress}/uploads/${point.image}`,
 		}
 
 		if (!point) return res.status(400).json({ message: 'Point not found' })
