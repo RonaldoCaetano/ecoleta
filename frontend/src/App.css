@@ -18,7 +18,8 @@ body {
 
 body,
 input,
-button {
+button,
+span {
 	font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
@@ -29,5 +30,5 @@ h4,
 h5,
 h6 {
 	color: var(--title-color);
-	font-family: Ubuntu;
+	font-family: Ubuntu, Roboto, sans-serif;
 }
